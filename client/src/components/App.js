@@ -1,33 +1,26 @@
 import React from 'react';
-//import {BrowserRouter,Route , Link}from "react-router-dom";
-//import {HashRouter,Route , Link}from "react-router-dom";
-import {MemoryRouter,Route , Link}from "react-router-dom";
+import {BrowserRouter,Route}from "react-router-dom";
 //BrowserRouter , Link is a react components
-
-const PageOne = ()=>{
-    return (<div>
-        <Link to="/pagetwo">PageTwo</Link>
-    </div>);
-
-}
-
-const PageTwo = ()=>{
-    return (<div>
-        Page Two
-        <button >Click Me</button>
-        <Link to="/">PageOne</Link>
-        </div>);
-}
+import {StreamCreate} from './streams/StreamCreate'; 
+import {StreamDelete} from './streams/StreamDelete';
+import {StreamEdit} from './streams/StreamEdit';
+import {StreamList} from './streams/StreamList';
+import {StreamShow} from './streams/StreamShow';
+import {Header} from './Header';
 
 export const App = ()=>{
 return (
-    <div>
-        <MemoryRouter>
+    <div className="ui container">       
+        <BrowserRouter>
             <div>
-                <Route path="/" exact component={PageOne}/>
-                <Route path="/pagetwo" exact component={PageTwo}/>
+            <Header/>
+            <Route path="/"  exact component={StreamList}/>
+            <Route path="/streams/new"  exact component={StreamCreate}/>
+            <Route path="/streams/delete"  exact component={StreamDelete}/>
+            <Route path="/streams/edit"  exact component={StreamEdit}/>
+            <Route path="/streams/show"  exact component={StreamShow}/>
             </div>
-        </MemoryRouter>
+        </BrowserRouter>
     </div>
 );
 }
