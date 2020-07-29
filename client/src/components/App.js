@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter,Route}from "react-router-dom";
 //BrowserRouter , Link is a react components
-import {StreamCreate} from './streams/StreamCreate'; 
+import StreamCreate from './streams/StreamCreate'; 
 import {StreamDelete} from './streams/StreamDelete';
 import {StreamEdit} from './streams/StreamEdit';
 import {StreamList} from './streams/StreamList';
